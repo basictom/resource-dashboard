@@ -12,6 +12,7 @@ namespace resource_dashboard.DataModels
         public virtual string Category { get; set; }
         public string ResourceName { get; set; }
         public string Description { get; set; }
+        public string ResourceUrl { get; set; }
         public virtual List<Tags> Tags { get; set; }
     }
 }

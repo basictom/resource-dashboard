@@ -18,7 +18,8 @@ namespace resource_dashboard
             bundles.Add(new ScriptBundle("~/bundles/vue").Include(
                       "~/Scripts/vue.js",
                       "~/Scripts/vue-resource.js",
-                      "~/app/main.js"));
+                      "~/app/src/main.js")
+                      .IncludeDirectory("~/app/src", "*.js", true));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

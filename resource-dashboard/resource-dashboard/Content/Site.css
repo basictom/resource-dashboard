@@ -1,8 +1,9 @@
 ﻿.navbar {
     background-color: tomato;
-    border:none;
-    color:#333333;
+    border: none;
+    color: #333333;
 }
+
 .navbar-fixed-left {
     width: 140px;
     position: fixed;
@@ -16,12 +17,42 @@
         color: #333333;
     }
 
-.navbar-fixed-left + .container {
+    .navbar-fixed-left + .container {
         padding-left: 160px;
-}
+    }
 
     /* On using dropdown menu (To right shift popuped) */
-.navbar-fixed-left .navbar-nav > li > .dropdown-menu {
+    .navbar-fixed-left .navbar-nav > li > .dropdown-menu {
         margin-top: -50px;
         margin-left: 140px;
+    }
+
+.body-content {
+    margin: 50px 0px;
 }
+
+.resource-container {
+    margin: 50px 0px;
+    position: fixed;
+    width: 80%;
+    height: auto;
+    left: 200px;
+    background-color: aquamarine;
+    padding-top: 20px;
+}
+
+.add-button {
+    text-align: center;
+    min-width: 190px;
+}
+
+.search-bar {
+    text-align: center;
+    max-width: 650px;
+}
+
+    .search-bar input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 1px;
+    }

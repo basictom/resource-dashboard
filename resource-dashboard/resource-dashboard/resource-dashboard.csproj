@@ -265,6 +265,10 @@
     <Compile Include="Migrations\201712091732499_resource-id-issues.Designer.cs">
       <DependentUpon>201712091732499_resource-id-issues.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712132045266_attempt-dos.cs" />
+    <Compile Include="Migrations\201712132045266_attempt-dos.Designer.cs">
+      <DependentUpon>201712132045266_attempt-dos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -275,7 +279,11 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\main.js" />
+    <Content Include="app\.gitignore" />
+    <Content Include="app\index.html" />
+    <Content Include="app\src\assets\logo.png" />
+    <Content Include="app\src\main.js" />
+    <Content Include="app\webpack.config.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -306,7 +314,11 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="app\App.vue" />
+    <Content Include="app\.babelrc" />
+    <Content Include="app\.editorconfig" />
+    <Content Include="app\package.json" />
+    <Content Include="app\README.md" />
+    <Content Include="app\src\App.vue" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -340,8 +352,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\components\" />
-    <Folder Include="app\views\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
@@ -380,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712091732499_resource-id-issues.resx">
       <DependentUpon>201712091732499_resource-id-issues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712132045266_attempt-dos.resx">
+      <DependentUpon>201712132045266_attempt-dos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
