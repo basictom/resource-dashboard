@@ -41,7 +41,7 @@
                 "Url": res.Url,
                 "Name": res.Name,
                 "category": res.category,
-                "tags" : newArray
+                "tags": newArray
             }
             console.log(newObj);
             postResource(newObj);
@@ -62,5 +62,13 @@
             .then(result => { getResources(); console.log(result) })
             .catch(error => { console.log(error) })
     }
+
+    $scope.searchTags = (query) => {
+        console.log(query);
+        $http.get(baseUrl + `api/resources/tags?query='${query}'`)
+            .then(result => { console.log(result) })
+            .catch(error => { console.log(error) })
+    }
+
 
 }]);

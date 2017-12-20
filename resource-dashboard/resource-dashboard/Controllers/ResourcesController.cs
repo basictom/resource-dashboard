@@ -15,16 +15,36 @@ namespace resource_dashboard.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         //GET resources
-        public IEnumerable<Resources> Get()
+        [HttpGet]
+        [Route("api/resources")]
+        public IEnumerable<Resources> GetReources()
         {
             return db.Resources.ToList<Resources>();
         }
-        //GET resources/id
-        public IEnumerable<Resources> Get(int? id)
+        //GET resources/bytagname
+        [HttpGet]
+        [Route("api/resources/bytagname")]
+        public IEnumerable<Resources> GetByTagName(string tags)
         {
-            var resource = from r in db.Resources where r.id == id select r;
+            var query = tags.Split(',');
+
+            var resources = from r in db.Resources
+                            join t in db.Tags on r.id equals t.Resources.id
+                            where query.Contains(t.TagName)
+                            select r;
+
+            return resources;
+            
+        }
+        //GET resources/tags
+        [HttpGet]
+        [Route("api/resources/tags")]
+        public IEnumerable<Tags> GetTags(string query)
+        {
+            var resource = db.Tags.Where(q => q.TagName.Contains(query));
             return resource;
         }
+        
         //POST resources
         public HttpResponseMessage Post(CreateResource value)
         {

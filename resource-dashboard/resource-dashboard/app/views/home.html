@@ -5,11 +5,13 @@
                 <div class="add-button col-md-2">
                     <button class="btn btn-info btn-md" ng-click="openDialog()">Add New Resource</button>
                 </div>
-                <div class="search-bar col-md-8">
-                    <input type="text" class="search" placeholder="Search..." />
+                <div class="search-bar col-md-10">
+                    <tags-input ng-model="search">
+                        <auto-complete source="searchTags($query)" select-first-match="true"></auto-complete>
+                    </tags-input>
                 </div>
-                <div class="search-button col-md-2">
-                    <button class="btn btn-warning btn-lg">Search Resource</button>
+                <div class="add-button col-md-2">
+                    <button class="btn btn-info btn-md" ng-click="searchForResources()">Search Resources</button>
                 </div>
             </div>
             <div class="resource-container">

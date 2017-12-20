@@ -10,5 +10,6 @@ namespace resource_dashboard.DataModels
     {
         public int id { get; set; }
         public string TagName { get; set; }
+        public virtual Resources Resources { get; set; }
     }
 }

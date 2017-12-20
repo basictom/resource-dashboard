@@ -277,6 +277,14 @@
     <Compile Include="Migrations\201712200024463_corrected-resource-id.Designer.cs">
       <DependentUpon>201712200024463_corrected-resource-id.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712200302091_alteredtagtable.cs" />
+    <Compile Include="Migrations\201712200302091_alteredtagtable.Designer.cs">
+      <DependentUpon>201712200302091_alteredtagtable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712200305039_alteredresourcelabelintagtable.cs" />
+    <Compile Include="Migrations\201712200305039_alteredresourcelabelintagtable.Designer.cs">
+      <DependentUpon>201712200305039_alteredresourcelabelintagtable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -1174,6 +1182,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712200024463_corrected-resource-id.resx">
       <DependentUpon>201712200024463_corrected-resource-id.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712200302091_alteredtagtable.resx">
+      <DependentUpon>201712200302091_alteredtagtable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712200305039_alteredresourcelabelintagtable.resx">
+      <DependentUpon>201712200305039_alteredresourcelabelintagtable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
