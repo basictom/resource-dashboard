@@ -9,7 +9,6 @@ namespace resource_dashboard.DataModels
     public class Tags
     {
         public int id { get; set; }
-        public int Resources_Id { get; set; }
         public string TagName { get; set; }
     }
 }

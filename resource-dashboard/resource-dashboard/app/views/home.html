@@ -1,0 +1,58 @@
+﻿<div class="row">
+    <div class="container body-content">
+        <div class="resource-container">
+            <div class="search-container col-md-12">
+                <div class="add-button col-md-2">
+                    <button class="btn btn-info btn-md" ng-click="openDialog()">Add New Resource</button>
+                </div>
+                <div class="search-bar col-md-8">
+                    <input type="text" class="search" placeholder="Search..." />
+                </div>
+                <div class="search-button col-md-2">
+                    <button class="btn btn-warning btn-lg">Search Resource</button>
+                </div>
+            </div>
+            <div class="resource-container">
+                <div class="col-md-12 card-contianer">
+                    <div class="card col-md-6" ng-repeat="r in resources">
+                        <h3>{{ r.ResourceName }}</h3>
+                        <p>{{  r.Description }}</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <script type="text/ng-template" id="add-new-modal.html">
+                <!--<div class="modal-dialog">-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <p>header</p>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" ng-model="resource.Name" /><br />
+                            <input type="text" ng-model="resource.Url" /><br />
+                            <input type="text" ng-model="resource.Desc" /><br />
+                            <tags-input ng-model="resource.tags"></tags-input><br />
+                            <select ng-model="resource.category">
+                                <!--<option ng-repeat="c in categories">{{ c }}</option>-->
+                                <option value="Javascript">Javascript</option>
+                                <option value="PHP">PHP</option>
+                                <option value="C#">C#</option>
+                                <option value="SQL">SQL</option>
+                                <option value="HTML">HTML</option>
+                                <option value="CSS">CSS</option>
+                                <option value="Python">Python</option>
+                                <option value=".NET">.NET</option>
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            <p>footer</p>
+                            <button class="btn btn-primary" ng-click="ok()">ok</button>
+                        </div>
+                    </div>
+            </script>
+
+
+        </div>
+    </div>
+</div>

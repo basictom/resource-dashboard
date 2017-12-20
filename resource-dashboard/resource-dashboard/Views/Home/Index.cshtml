@@ -1,24 +1,2 @@
-﻿<div id="app">
-    <div class="row">
-        <div class="container body-content">
-            <div class="resource-container">
-                <div class="search-container col-md-12">
-                    <div class="add-button col-md-2">
-                        <button id="show-modal" v-on:click="showModal" class="btn btn-info btn-lg">Add New Resource</button>
-                    </div>
-                    <div class="search-bar col-md-8">
-                        <input type="text" class="search" placeholder="Search..." />
-                    </div>
-                    <div class="search-button col-md-2">
-                        <button class="btn btn-warning btn-lg">Search Resource</button>
-                    </div>
-                </div>
-                <get-resources></get-resources>
-                <modal v-if="showModal" v-on:close="showModal = false">
-                    <!-- you can use custom content here to overwrite default content -->
-                    <h3 slot="header">custom header</h3>
-                </modal>
-            </div>
-        </div>
-    </div>
+﻿<div ng-view>
 </div>

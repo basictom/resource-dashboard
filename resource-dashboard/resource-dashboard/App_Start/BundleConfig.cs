@@ -13,16 +13,20 @@ namespace resource_dashboard
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
+                      "~/Scripts/angular-ui/ui-bootstrap-tpls.js",
                       "~/Scripts/respond.js,"));
 
-            bundles.Add(new ScriptBundle("~/bundles/vue").Include(
-                      "~/Scripts/vue.js",
-                      "~/Scripts/vue-resource.js",
-                      "~/app/src/main.js")
-                      .IncludeDirectory("~/app/src", "*.js", true));
+            bundles.Add(new ScriptBundle("~/bundles/angular")
+                .Include("~/Scripts/angular.js",
+                    "~/Scripts/angular-route.js",
+                    "~/Scripts/ng-tags-input.js",
+                    "~/app/app.js",
+                    "~/app/app-config.js")
+                .IncludeDirectory("~/app/controllers", "*.js", true));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/ng-tags-input.css",
                       "~/Content/site.css"));
         }
     }

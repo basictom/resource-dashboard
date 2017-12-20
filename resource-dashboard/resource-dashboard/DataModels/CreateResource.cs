@@ -11,7 +11,6 @@ namespace resource_dashboard.DataModels
         public string ResourceName { get; set; }
         public string Description { get; set; }
         public string ResourceUrl { get; set; }
-
         public List<string> TagNames { get; set; }
     }
 }

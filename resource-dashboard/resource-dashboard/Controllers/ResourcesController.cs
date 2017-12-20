@@ -19,7 +19,7 @@ namespace resource_dashboard.Controllers
         {
             return db.Resources.ToList<Resources>();
         }
-        //GET resources/name/id
+        //GET resources/id
         public IEnumerable<Resources> Get(int? id)
         {
             var resource = from r in db.Resources where r.id == id select r;
