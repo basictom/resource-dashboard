@@ -39,9 +39,12 @@ namespace resource_dashboard.Controllers
         //GET resources/tags
         [HttpGet]
         [Route("api/resources/tags")]
-        public IEnumerable<Tags> GetTags(string query)
+        public IQueryable GetTags(string query)
         {
-            var resource = db.Tags.Where(q => q.TagName.Contains(query));
+            var resource = db.Tags.Where(q => q.TagName.Contains(query)).Select(r => new { r.TagName }).Distinct();
+
+            //.Select(r => r.TagName).Distinct();
+            //db.Tags.Where(q => q.TagName.Contains(query));
             return resource;
         }
         

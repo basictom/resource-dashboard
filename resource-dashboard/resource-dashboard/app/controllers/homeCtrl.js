@@ -65,9 +65,9 @@
 
     $scope.searchTags = (query) => {
         console.log(query);
-        $http.get(baseUrl + `api/resources/tags?query='${query}'`)
-            .then(result => { console.log(result) })
-            .catch(error => { console.log(error) })
+        var obj = {};
+        return $http.get(baseUrl + '/api/resources/tags?query=' + query).then(result => { console.log(result) });
+        console.log(obj);
     }
 
 
