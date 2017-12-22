@@ -24,7 +24,7 @@ namespace resource_dashboard.Controllers
         //GET resources/bytagname
         [HttpGet]
         [Route("api/resources/bytagname")]
-        public IEnumerable<Resources> GetByTagName(string tags)
+        public IQueryable<Resources> GetByTagName(string tags)
         {
             var query = tags.Split(',');
 
@@ -51,6 +51,8 @@ namespace resource_dashboard.Controllers
         }
         
         //POST resources
+        [HttpPost]
+        [Route("api/resources")]
         public HttpResponseMessage Post(CreateResource value)
         {
             var resource = new Resources();

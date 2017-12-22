@@ -26,6 +26,12 @@
             controller: function ($scope, $uibModalInstance, resource) {
                 console.log(resource);
                 $scope.resource = resource;
+                $scope.searchTags = ($query) => {
+                    return $http.get(baseUrl + '/api/resources/tags?query=' + $query).then((result) => {
+                        console.log(result);
+                        return result.data;
+                    });
+                };
                 $scope.ok = function () {
                     $uibModalInstance.close({
                         resource: this.resource
@@ -43,7 +49,6 @@
                 "category": res.category,
                 "tags": newArray
             }
-            console.log(newObj);
             postResource(newObj);
         });
 
@@ -51,7 +56,6 @@
     };
 
     let postResource = (res) => {
-        console.log(res.tags);
         $http.post(baseUrl + '/api/resources', {
             ResourceName: res.Name,
             Description: res.Desc,
@@ -59,7 +63,7 @@
             ResourceUrl: res.Url,
             TagNames: res.tags
         })
-            .then(result => { getResources(); console.log(result) })
+            .then(result => { getResources(); })
             .catch(error => { console.log(error) })
     }
 
@@ -67,10 +71,6 @@
         return $http.get(baseUrl + '/api/resources/tags?query=' + $query).then((result) => {
             console.log(result);
             return result.data;
-            //var tags = result.data;
-            //return tags.filter(function (t) {
-            //    return t.TagName.toLowerCase().indexOf($query.toLowerCase()) != -1;
-            //})
         });   
     }
 

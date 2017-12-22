@@ -34,7 +34,9 @@
                             <input type="text" ng-model="resource.Name" /><br />
                             <input type="text" ng-model="resource.Url" /><br />
                             <input type="text" ng-model="resource.Desc" /><br />
-                            <tags-input ng-model="resource.tags"></tags-input><br />
+                            <tags-input ng-model="resource.tags">
+                                <auto-complete source="searchTags($query)" loadOnFocus="true"></auto-complete>    
+                            </tags-input><br />
                             <select ng-model="resource.category">
                                 <!--<option ng-repeat="c in categories">{{ c }}</option>-->
                                 <option value="Javascript">Javascript</option>
