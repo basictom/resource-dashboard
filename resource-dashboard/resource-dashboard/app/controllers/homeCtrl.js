@@ -1,4 +1,4 @@
-﻿app.controller("homeCtrl", ["$http", "$scope", "$uibModal", function ($http, $scope, $uibModal) {
+﻿app.controller("homeCtrl", ["$http", "$scope", "$uibModal", "tagsInputConfig", function ($http, $scope, $uibModal, tagsInputConfig) {
     var baseUrl = 'http://localhost:52185';
 
     $scope.categories = ["Javascript", "PHP", "MySQL", "C#", "HMTL", "CSS", ".NET", "Python"];
@@ -63,11 +63,15 @@
             .catch(error => { console.log(error) })
     }
 
-    $scope.searchTags = (query) => {
-        console.log(query);
-        var obj = {};
-        return $http.get(baseUrl + '/api/resources/tags?query=' + query).then(result => { console.log(result) });
-        console.log(obj);
+    $scope.searchTags = ($query) => {
+        return $http.get(baseUrl + '/api/resources/tags?query=' + $query).then((result) => {
+            console.log(result);
+            return result.data;
+            //var tags = result.data;
+            //return tags.filter(function (t) {
+            //    return t.TagName.toLowerCase().indexOf($query.toLowerCase()) != -1;
+            //})
+        });   
     }
 
 
