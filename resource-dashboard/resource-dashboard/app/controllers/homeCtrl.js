@@ -1,15 +1,33 @@
 ﻿app.controller("homeCtrl", ["$http", "$scope", "$uibModal", "tagsInputConfig", function ($http, $scope, $uibModal, tagsInputConfig) {
-    var baseUrl = 'http://localhost:52185';
+    const baseUrl = 'http://localhost:52185';
 
     $scope.categories = ["Javascript", "PHP", "MySQL", "C#", "HMTL", "CSS", ".NET", "Python"];
+    $scope.resources = [];
+    $scope.search = [];
 
-    let getResources = () => {
-        $http.get(baseUrl + "/api/resources").then((results) => {
+    getResources();
+
+    async function getResources(){
+        await $http.get(baseUrl + "/api/resources").then((results) => {
             $scope.resources = results.data;
+            console.log($scope.resources.length);
+
+            $scope.currentPage = 1;
+            $scope.numPerPage = 10;
+            $scope.maxSize = $scope.resources.length;
+
+            $scope.$watch("currentPage + numPerPage", function () {
+                var begin = (($scope.currentPage - 1) * $scope.numPerPage)
+                    , end = begin + $scope.numPerPage;
+
+                $scope.resources = $scope.resources.slice(begin, end);
+            });
+
         });
     }
 
-    getResources();
+    
+    
 
     $scope.openDialog = function () {
 
@@ -69,10 +87,24 @@
 
     $scope.searchTags = ($query) => {
         return $http.get(baseUrl + '/api/resources/tags?query=' + $query).then((result) => {
-            console.log(result);
             return result.data;
-        });   
+        });
     }
+
+    $scope.searchForResources = () => {
+        let vals = $scope.search;
+        let query = vals.map(x => x.text).join(',');
+        $http.get(baseUrl + '/api/resources/bytagname?tags=' + query).then((result) => {
+            $scope.resources = result.data;
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
+
+
+
+
+    
 
 
 }]);

@@ -28,7 +28,11 @@
     }
 
 .body-content {
-    margin: 50px 0px;
+
+}
+.page-container {
+    position: absolute;
+    bottom: 10px;
 }
 
 .resource-container {
