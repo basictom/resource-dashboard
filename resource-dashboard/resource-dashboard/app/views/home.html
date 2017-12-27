@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="col-md-12 card-contianer">
-                <div class="card col-md-6" ng-repeat="r in resources">
+                <div ng-click="openResource(r)" class="card col-md-6" ng-repeat="r in resources">
                     <h3>{{ r.ResourceName }}</h3>
                     <p>{{  r.Description }}</p>
                 </div>
@@ -41,7 +41,6 @@
                             <auto-complete source="searchTags($query)" loadOnFocus="true"></auto-complete>
                         </tags-input><br />
                         <select ng-model="resource.category">
-                            <!--<option ng-repeat="c in categories">{{ c }}</option>-->
                             <option value="Javascript">Javascript</option>
                             <option value="PHP">PHP</option>
                             <option value="C#">C#</option>
@@ -55,6 +54,17 @@
                     <div class="modal-footer">
                         <p>footer</p>
                         <button class="btn btn-primary" ng-click="ok()">ok</button>
+                    </div>
+                </div>
+            </script>
+
+            <script type="text/ng-template" id="show-resource-modal.html">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h3><a href="{{obj.Url}}" target="_blank">{{obj.ResourceName}}</a></h3>
+                        <p>{{obj.Description}}</p>
+                        <p class="category">{{obj.Category}}</p>
+                        <span class="tags" ng-repeat="t in obj.Tags">{{t.TagName}}</span>
                     </div>
                 </div>
             </script>

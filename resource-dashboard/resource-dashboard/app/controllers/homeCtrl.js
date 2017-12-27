@@ -7,10 +7,9 @@
 
     getResources();
 
-    async function getResources(){
+    async function getResources() {
         await $http.get(baseUrl + "/api/resources").then((results) => {
             $scope.resources = results.data;
-            console.log($scope.resources.length);
 
             $scope.currentPage = 1;
             $scope.numPerPage = 10;
@@ -26,23 +25,48 @@
         });
     }
 
-    
-    
+    $scope.openResource = (obj) => {
+        console.log(obj.ResourceName);
+        //$scope.name = obj.ResourceName;
+        //$scope.desc = obj.Description;
+        $scope.obj = obj;
 
-    $scope.openDialog = function () {
+        $uibModal.open({
+            templateUrl: 'show-resource-modal.html',
+            resolve: {
+                resObj: () => {
+                    return $scope.obj = obj;
+                }
+            },
+            controller: ($scope, $uibModalInstance, resObj) => {
+                console.log(resObj);
+                $scope.obj = resObj;
+                $scope.ok = () => {
+                    $uibModalInstance.close({
+                        resource: this.obj
+                    });
+                };
+            }
+        }).result.then((res) => {
+            return;
+        })
+    }
+
+
+
+
+    $scope.openDialog = () => {
 
         $scope.resource = {};
 
         $uibModal.open({
             templateUrl: 'add-new-modal.html',
             resolve: {
-                resource: function () {
-                    console.log($scope.resource);
+                resource: () => {
                     return $scope.resource;
                 }
             },
-            controller: function ($scope, $uibModalInstance, resource) {
-                console.log(resource);
+            controller: ($scope, $uibModalInstance, resource) => {
                 $scope.resource = resource;
                 $scope.searchTags = ($query) => {
                     return $http.get(baseUrl + '/api/resources/tags?query=' + $query).then((result) => {
@@ -50,13 +74,13 @@
                         return result.data;
                     });
                 };
-                $scope.ok = function () {
+                $scope.ok = () => {
                     $uibModalInstance.close({
                         resource: this.resource
                     });
                 };
             }
-        }).result.then(function (r) {
+        }).result.then((r) => {
             var res = r.resource;
             const tagArray = res.tags.map(x => Object.values(x));
             let newArray = [].concat.apply([], tagArray);
@@ -100,11 +124,5 @@
             console.log(error);
         })
     }
-
-
-
-
-    
-
 
 }]);

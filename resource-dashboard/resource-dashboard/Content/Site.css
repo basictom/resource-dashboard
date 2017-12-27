@@ -30,6 +30,24 @@
 .body-content {
 
 }
+
+.category {
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid tomato;
+    display: inline-block;
+}
+
+.tags {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid #CCC;
+}
+.modal-content {
+    border-radius:0;
+    border:none;
+}
 .page-container {
     position: absolute;
     bottom: 10px;
