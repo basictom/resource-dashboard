@@ -3,44 +3,43 @@
         <div class="resource-container">
             <div class="search-container col-md-12">
                 <div class="add-button col-md-2">
-                    <button class="btn btn-info btn-md" ng-click="openDialog()">Add New Resource</button>
+                    <button class="search-btns yellow-btn" ng-click="openDialog()">Add New Resource</button>
                 </div>
                 <div class="search-bar col-md-10">
-                    <tags-input ng-model="search">
+                    <tags-input ng-model="search" placeholder="Search by tag">
                         <auto-complete source="searchTags($query)" loadOnFocus="true"></auto-complete>
                     </tags-input>
                 </div>
                 <div class="add-button col-md-2">
-                    <button class="btn btn-info btn-md" ng-click="searchForResources()">Search Resources</button>
+                    <button class="search-btns red-btn" ng-click="searchForResources()">Search Resources</button>
                 </div>
             </div>
             <div class="col-md-12 card-contianer">
-                <div ng-click="openResource(r)" class="card col-md-6" ng-repeat="r in resources">
+                <div ng-click="openResource(r)" class="panel panel-danger col-md-5" ng-repeat="r in resources">
                     <h3>{{ r.ResourceName }}</h3>
                     <p>{{  r.Description }}</p>
+                    <p class="category">{{r.Category}}</p>
+                    <span class="pill-tags" ng-repeat="t in r.Tags">{{t.TagName}}</span>
                 </div>
             </div>
-            <pagination ng-model="currentPage"
-                        total-items="resources.length"
-                        max-size="maxSize"
-                        boundary-links="true">
-            </pagination>
+            
 
 
             <script type="text/ng-template" id="add-new-modal.html">
                 <!--<div class="modal-dialog">-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <p>header</p>
+                        <p>add new resource</p>
                     </div>
                     <div class="modal-body">
-                        <input type="text" ng-model="resource.Name" /><br />
-                        <input type="text" ng-model="resource.Url" /><br />
-                        <input type="text" ng-model="resource.Desc" /><br />
-                        <tags-input ng-model="resource.tags">
+                        <input type="text" placeholder="Resource Name" ng-model="resource.Name" required />
+                        <input type="text" placeholder="Resource URL" ng-model="resource.Url" required />
+                        <textarea type="text" placeholder="Resource Description" ng-model="resource.Desc" required></textarea>
+                        <tags-input ng-model="resource.tags" required>
                             <auto-complete source="searchTags($query)" loadOnFocus="true"></auto-complete>
-                        </tags-input><br />
-                        <select ng-model="resource.category">
+                        </tags-input>
+                        <select ng-model="resource.category" required>
+                            <option value="" disabled selected>Select your Category</option>
                             <option value="Javascript">Javascript</option>
                             <option value="PHP">PHP</option>
                             <option value="C#">C#</option>
@@ -52,19 +51,19 @@
                         </select>
                     </div>
                     <div class="modal-footer">
-                        <p>footer</p>
-                        <button class="btn btn-primary" ng-click="ok()">ok</button>
+                        <button class="modal-btn yellow-btn" ng-click="send(resource)">ADD</button>
+                        <button class="modal-btn red-btn" ng-click="cancel()">CANCEL</button>
                     </div>
                 </div>
             </script>
 
             <script type="text/ng-template" id="show-resource-modal.html">
-                <div class="modal-content">
+                <div class="modal-content resource-modal">
                     <div class="modal-body">
-                        <h3><a href="{{obj.Url}}" target="_blank">{{obj.ResourceName}}</a></h3>
+                        <h3><a ng-href="{{obj.ResourceUrl}}" target="_blank">{{obj.ResourceName}}</a></h3>
                         <p>{{obj.Description}}</p>
                         <p class="category">{{obj.Category}}</p>
-                        <span class="tags" ng-repeat="t in obj.Tags">{{t.TagName}}</span>
+                        <span class="pill-tags" ng-repeat="t in obj.Tags">{{t.TagName}}</span>
                     </div>
                 </div>
             </script>
