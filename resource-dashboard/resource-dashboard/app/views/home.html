@@ -15,13 +15,17 @@
                 </div>
             </div>
             <div class="col-md-12 card-contianer">
-                <div ng-click="openResource(r)" class="panel panel-danger col-md-5" ng-repeat="r in resources">
+                <div ng-click="openResource(r)" class="panel panel-danger col-md-5" ng-repeat="r in resources | pagination: (currentPage - 1) * pageSize | limitTo: pageSize">
                     <h3>{{ r.ResourceName }}</h3>
                     <p>{{  r.Description }}</p>
                     <p class="category">{{r.Category}}</p>
                     <span class="pill-tags" ng-repeat="t in r.Tags">{{t.TagName}}</span>
                 </div>
             </div>
+            <div class="page-container">
+                <ul uib-pagination total-items="resources.length" items-per-page="pageSize" ng-model="currentPage"></ul>
+            </div>
+            
             
 
 

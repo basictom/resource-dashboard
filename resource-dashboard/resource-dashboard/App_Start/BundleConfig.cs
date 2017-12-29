@@ -12,6 +12,8 @@ namespace resource_dashboard
                         "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                "~/Scripts/angular-animate.js",
+                "~/Scripts/angular-sanitize.js",
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/angular-ui/ui-bootstrap-tpls.js",
                       "~/Scripts/respond.js,"));

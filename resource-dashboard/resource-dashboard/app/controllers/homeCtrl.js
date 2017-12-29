@@ -1,8 +1,9 @@
 ﻿app.controller("homeCtrl", ["$http", "$scope", "$uibModal", "tagsInputConfig", function ($http, $scope, $uibModal, tagsInputConfig) {
     const baseUrl = 'http://localhost:52185';
 
-    $scope.categories = ["Javascript", "PHP", "MySQL", "C#", "HMTL", "CSS", ".NET", "Python"];
+    //$scope.categories = ["Javascript", "PHP", "MySQL", "C#", "HMTL", "CSS", ".NET", "Python"];
     $scope.resources = [];
+    var globalResource = $scope.resources;
     $scope.search = [];
 
     getResources();
@@ -10,6 +11,7 @@
     async function getResources() {
         await $http.get(baseUrl + "/api/resources").then((results) => {
             $scope.resources = results.data;
+            pagination($scope.resources);
         });
     }
 
@@ -24,7 +26,6 @@
                 }
             },
             controller: ($scope, $uibModalInstance, resObj) => {
-                console.log(resObj);
                 $scope.obj = resObj;
                 $scope.ok = () => {
                     $uibModalInstance.close({
@@ -39,20 +40,15 @@
 
 
     $scope.openDialog = () => {
-
         $scope.resource = {};
-        console.log($scope.resource);
-
         $uibModal.open({
             templateUrl: 'add-new-modal.html',
             resolve: {
                 resource: () => {
                     return $scope.resource;
-                    console.log($scope.resource);
                 }
             },
             controller: ($scope, $uibModalInstance, resource) => {
-                console.log(resource);
                 $scope.resource = resource;
                 $scope.searchTags = ($query) => {
                     return $http.get(baseUrl + '/api/resources/tags?query=' + $query).then((result) => {
@@ -61,8 +57,6 @@
                     });
                 };
                 $scope.send = (val) => {
-                    console.log("scoped values", val);
-
                     let tagArray = val.tags.map(x => Object.values(x));
                     let newArray = [].concat.apply([], tagArray);
                     let newObj = {
@@ -84,10 +78,6 @@
                 }
             }
         });
-        //.result.then(function (response) {
-        //let res = response.resource;
-
-        // });
 
 
     };
@@ -101,7 +91,7 @@
             TagNames: res.tags
         })
             .then(result => { getResources(); })
-            .catch(error => { console.log(error) })
+            .catch(error => { console.log(error); })
     }
 
     $scope.searchTags = ($query) => {
@@ -112,7 +102,6 @@
 
     $scope.searchForResources = () => {
         let vals = $scope.search;
-        console.log(vals.length);
         if (vals.length === 0) {
             return getResources();
         } else {
@@ -125,4 +114,17 @@
         }
     }
 
-}]);
+    let pagination = (r) => {
+        console.log(r.length);
+        $scope.totalItems = 500;
+        $scope.pageSize = 6;
+        $scope.currentPage = 1;
+
+
+    }
+
+}]).filter('pagination', function () {
+    return function (data, start) {
+        return data.slice(start);
+    }
+});

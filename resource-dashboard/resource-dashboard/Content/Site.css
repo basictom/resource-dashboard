@@ -43,7 +43,7 @@
 }
 .category {
     padding: 5px;
-    margin: 5px;
+    margin: 5px 7px 20px 0px;
     border: 2px solid tomato;
     display: inline-block;
 }
@@ -68,7 +68,7 @@ tags-input .host {
 }
 .pill-tags {
     display: inline-block;
-    margin: 5px;
+    margin: 5px 7px 20px 0px;
     padding: 5px;
     border: 2px solid #CCC;
 }
@@ -173,15 +173,17 @@ tags-input .host {
     padding: 0px 30px;
 }
 .page-container {
-    position: absolute;
-    bottom: 10px;
+    position:inherit;
+    top: 65%;
+    left:38%; 
+    width:100%;
 }
 
 .resource-container {
     margin: 50px 0px;
     position: fixed;
     width: 80%;
-    height: auto;
+    height: 100%;
     left: 200px;
     padding-top: 20px;
 }
