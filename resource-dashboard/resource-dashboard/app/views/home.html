@@ -1,78 +1,78 @@
-﻿<div class="row">
-    <div class="container body-content">
-        <div class="resource-container">
-            <div class="search-container col-md-12">
-                <div class="add-button col-md-2">
-                    <button class="search-btns yellow-btn" ng-click="openDialog()">Add New Resource</button>
-                </div>
-                <div class="search-bar col-md-10">
-                    <tags-input ng-model="search" placeholder="Search by tag">
-                        <auto-complete source="searchTags($query)" loadOnFocus="true"></auto-complete>
-                    </tags-input>
-                </div>
-                <div class="add-button col-md-2">
-                    <button class="search-btns red-btn" ng-click="searchForResources()">Search Resources</button>
-                </div>
-            </div>
-            <div class="col-md-12 card-contianer">
-                <div ng-click="openResource(r)" class="panel panel-danger col-md-5" ng-repeat="r in resources | pagination: (currentPage - 1) * pageSize | limitTo: pageSize">
-                    <h3>{{ r.ResourceName }}</h3>
-                    <p>{{  r.Description }}</p>
-                    <p class="category">{{r.Category}}</p>
-                    <span class="pill-tags" ng-repeat="t in r.Tags">{{t.TagName}}</span>
-                </div>
-            </div>
-            <div class="page-container">
-                <ul uib-pagination total-items="resources.length" items-per-page="pageSize" ng-model="currentPage"></ul>
-            </div>
-            
-            
-
-
-            <script type="text/ng-template" id="add-new-modal.html">
-                <!--<div class="modal-dialog">-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <p>add new resource</p>
-                    </div>
-                    <div class="modal-body">
-                        <input type="text" placeholder="Resource Name" ng-model="resource.Name" required />
-                        <input type="text" placeholder="Resource URL" ng-model="resource.Url" required />
-                        <textarea type="text" placeholder="Resource Description" ng-model="resource.Desc" required></textarea>
-                        <tags-input ng-model="resource.tags" required>
-                            <auto-complete source="searchTags($query)" loadOnFocus="true"></auto-complete>
-                        </tags-input>
-                        <select ng-model="resource.category" required>
-                            <option value="" disabled selected>Select your Category</option>
-                            <option value="Javascript">Javascript</option>
-                            <option value="PHP">PHP</option>
-                            <option value="C#">C#</option>
-                            <option value="SQL">SQL</option>
-                            <option value="HTML">HTML</option>
-                            <option value="CSS">CSS</option>
-                            <option value="Python">Python</option>
-                            <option value=".NET">.NET</option>
-                        </select>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="modal-btn yellow-btn" ng-click="send(resource)">ADD</button>
-                        <button class="modal-btn red-btn" ng-click="cancel()">CANCEL</button>
-                    </div>
-                </div>
-            </script>
-
-            <script type="text/ng-template" id="show-resource-modal.html">
-                <div class="modal-content resource-modal">
-                    <div class="modal-body">
-                        <h3><a ng-href="{{obj.ResourceUrl}}" target="_blank">{{obj.ResourceName}}</a></h3>
-                        <p>{{obj.Description}}</p>
-                        <p class="category">{{obj.Category}}</p>
-                        <span class="pill-tags" ng-repeat="t in obj.Tags">{{t.TagName}}</span>
-                    </div>
-                </div>
-            </script>
-
-
+﻿<div class="main-container">
+    <div class="fixed-nav">
+        <div ng-click="category('JS')"><img width="50" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/240px-Unofficial_JavaScript_logo_2.svg.png" /></div>
+        <div><img width="75" src="http://www.xappsoftware.com/wordpress/wp-content/uploads/2014/02/PHP.png" /></div>
+        <div><img width="75" src="https://www.handybackup.net/images/icons/mysql-backup.png" /></div>
+        <div><img width="50" src="https://developer.fedoraproject.org/static/logo/csharp.png" /></div>
+        <div><img width="75" src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" /></div>
+        <div><img width="50" src="https://cdn.worldvectorlogo.com/logos/css-3.svg" /></div>
+        <div><img width="75" src="https://codercamps.co/Img/dotNet-logo.png" /></div>
+        <div><img width="75" src="https://www.python.org/static/opengraph-icon-200x200.png" /></div>
+    </div>
+    <div class="search-bar">
+        <div class="add-btn">
+            <button class="search-btns yellow-btn" ng-click="openDialog()">Add New Resource</button>
+        </div>
+        <div class="search-input">
+            <tags-input ng-model="search" placeholder="Search by tag">
+                <auto-complete source="searchTags($query)" loadOnFocus="true"></auto-complete>
+            </tags-input>
+        </div>
+        <div class="submit-btn">
+            <button class="search-btns red-btn" ng-click="searchForResources()">Search Resources</button>
         </div>
     </div>
+    <div class="card-container">
+        <div ng-click="openResource(r)" class="panel panel-danger col-md-5" ng-repeat="r in resources | pagination: (currentPage - 1) * pageSize | limitTo: pageSize">
+            <h3>{{ r.ResourceName }}</h3>
+            <div>{{ r.Description }}</div>
+            <p class="category">{{r.Category}}</p>
+            <span class="pill-tags" ng-repeat="t in r.Tags">{{t.TagName}}</span>
+        </div>
+    </div>
+    <div class="card-pagination">
+        <ul uib-pagination total-items="resources.length" items-per-page="pageSize" ng-model="currentPage"></ul>
+    </div>
 </div>
+
+<script type="text/ng-template" id="add-new-modal.html">
+    <div class="modal-content">
+        <div class="modal-header">
+            <p>add new resource</p>
+        </div>
+        <div class="modal-body">
+            <input type="text" placeholder="Resource Name" ng-model="resource.Name" required />
+            <input type="text" placeholder="Resource URL" ng-model="resource.Url" required />
+            <textarea type="text" placeholder="Resource Description" ng-model="resource.Desc" required></textarea>
+            <tags-input ng-model="resource.tags" required>
+                <auto-complete source="searchTags($query)" loadOnFocus="true"></auto-complete>
+            </tags-input>
+            <select ng-model="resource.category" required>
+                <option value="" disabled selected>Select your Category</option>
+                <option value="Javascript">Javascript</option>
+                <option value="PHP">PHP</option>
+                <option value="C#">C#</option>
+                <option value="SQL">SQL</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="Python">Python</option>
+                <option value=".NET">.NET</option>
+            </select>
+        </div>
+        <div class="modal-footer">
+            <button class="modal-btn yellow-btn" ng-click="send(resource)">ADD</button>
+            <button class="modal-btn red-btn" ng-click="cancel()">CANCEL</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="show-resource-modal.html">
+    <div class="modal-content resource-modal">
+        <div class="modal-body">
+            <h3><a ng-href="{{obj.ResourceUrl}}" target="_blank">{{obj.ResourceName}}</a></h3>
+            <p>{{obj.Description}}</p>
+            <p class="category">{{obj.Category}}</p>
+            <span class="pill-tags" ng-repeat="t in obj.Tags">{{t.TagName}}</span>
+        </div>
+    </div>
+</script>

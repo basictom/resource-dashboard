@@ -48,6 +48,15 @@ namespace resource_dashboard.Controllers
             //db.Tags.Where(q => q.TagName.Contains(query));
             return resource;
         }
+        [HttpGet]
+        [Route("api/resources/category")]
+        public IQueryable<Resources> GetResourcesByCategory(string category)
+        {
+            var cat = from r in db.Resources
+                      where category.Contains(r.Category)
+                      select r;
+            return cat;
+        }
         
         //POST resources
         [HttpPost]

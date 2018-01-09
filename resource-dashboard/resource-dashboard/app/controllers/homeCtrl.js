@@ -36,6 +36,13 @@
         });
     }
 
+    $scope.category = (cat) => {
+        console.log(cat);
+        $http.get(baseUrl + "/api/resources/category?category=" + cat).then((results) => {
+            $scope.resources = results.data;
+        }).catch(error => console.log(error));
+    }
+
 
 
 
@@ -115,12 +122,9 @@
     }
 
     let pagination = (r) => {
-        console.log(r.length);
         $scope.totalItems = 500;
         $scope.pageSize = 6;
         $scope.currentPage = 1;
-
-
     }
 
 }]).filter('pagination', function () {
