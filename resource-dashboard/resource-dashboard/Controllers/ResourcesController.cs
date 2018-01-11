@@ -69,6 +69,7 @@ namespace resource_dashboard.Controllers
             resource.Description = value.Description;
             resource.ResourceName = value.ResourceName;
             resource.ResourceUrl = value.ResourceUrl;
+            resource.Date = value.Date;
             resource.Tags = new List<Tags>();
 
             foreach (var t in value.TagNames)

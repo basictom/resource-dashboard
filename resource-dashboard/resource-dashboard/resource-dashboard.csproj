@@ -285,6 +285,14 @@
     <Compile Include="Migrations\201712200305039_alteredresourcelabelintagtable.Designer.cs">
       <DependentUpon>201712200305039_alteredresourcelabelintagtable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801111600152_set-date.cs" />
+    <Compile Include="Migrations\201801111600152_set-date.Designer.cs">
+      <DependentUpon>201801111600152_set-date.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801111627106_trying-date.cs" />
+    <Compile Include="Migrations\201801111627106_trying-date.Designer.cs">
+      <DependentUpon>201801111627106_trying-date.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -1188,6 +1196,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712200305039_alteredresourcelabelintagtable.resx">
       <DependentUpon>201712200305039_alteredresourcelabelintagtable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801111600152_set-date.resx">
+      <DependentUpon>201801111600152_set-date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801111627106_trying-date.resx">
+      <DependentUpon>201801111627106_trying-date.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

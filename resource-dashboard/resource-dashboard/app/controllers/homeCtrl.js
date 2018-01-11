@@ -95,6 +95,7 @@
             Description: res.Desc,
             Category: res.category,
             ResourceUrl: res.Url,
+            Date: new Date(),
             TagNames: res.tags
         })
             .then(result => { getResources(); })

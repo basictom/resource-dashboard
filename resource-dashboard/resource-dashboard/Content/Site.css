@@ -154,9 +154,9 @@ tags-input .host {
 }
 
 /* 
-   ===================
+   =================
     CSS GRID STYLES
-   ===================
+   =================
 */
 .all-container {
     height:100%;
@@ -180,6 +180,9 @@ tags-input .host {
     text-align: center;
     align-items: center;
 }
+    .fixed-nav div {
+        cursor: pointer;
+    }
 
 .search-bar {
     grid-row-start: 2;

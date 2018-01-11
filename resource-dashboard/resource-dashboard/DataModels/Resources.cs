@@ -13,6 +13,8 @@ namespace resource_dashboard.DataModels
         public string ResourceName { get; set; }
         public string Description { get; set; }
         public string ResourceUrl { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime Date { get; set; }
         public virtual List<Tags> Tags { get; set; }
     }
 }

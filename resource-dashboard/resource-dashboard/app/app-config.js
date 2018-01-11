@@ -4,5 +4,5 @@
         {
             templateUrl: "/app/views/home.html",
             controller: "homeCtrl"
-        });
+        }).otherwise("/home");
 }]);

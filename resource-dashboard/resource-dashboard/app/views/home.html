@@ -1,13 +1,13 @@
 ﻿<div class="main-container">
     <div class="fixed-nav">
-        <div ng-click="category('JS')"><img width="50" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/240px-Unofficial_JavaScript_logo_2.svg.png" /></div>
-        <div><img width="75" src="http://www.xappsoftware.com/wordpress/wp-content/uploads/2014/02/PHP.png" /></div>
-        <div><img width="75" src="https://www.handybackup.net/images/icons/mysql-backup.png" /></div>
-        <div><img width="50" src="https://developer.fedoraproject.org/static/logo/csharp.png" /></div>
-        <div><img width="75" src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" /></div>
-        <div><img width="50" src="https://cdn.worldvectorlogo.com/logos/css-3.svg" /></div>
-        <div><img width="75" src="https://codercamps.co/Img/dotNet-logo.png" /></div>
-        <div><img width="75" src="https://www.python.org/static/opengraph-icon-200x200.png" /></div>
+        <div ng-click="category('Javascript')"><img width="50" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/240px-Unofficial_JavaScript_logo_2.svg.png" /></div>
+        <div ng-click="category('PHP')"><img width="75" src="http://www.xappsoftware.com/wordpress/wp-content/uploads/2014/02/PHP.png" /></div>
+        <div ng-click="category('SQL')"><img width="75" src="https://www.handybackup.net/images/icons/mysql-backup.png" /></div>
+        <div ng-click="category('C#')"><img width="50" src="https://developer.fedoraproject.org/static/logo/csharp.png" /></div>
+        <div ng-click="category('HTML')"><img width="75" src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" /></div>
+        <div ng-click="category('CSS')"><img width="50" src="https://cdn.worldvectorlogo.com/logos/css-3.svg" /></div>
+        <div ng-click="category('.NET')"><img width="75" src="https://codercamps.co/Img/dotNet-logo.png" /></div>
+        <div ng-click="category('Python')"><img width="75" src="https://www.python.org/static/opengraph-icon-200x200.png" /></div>
     </div>
     <div class="search-bar">
         <div class="add-btn">
@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="card-container">
-        <div ng-click="openResource(r)" class="panel panel-danger col-md-5" ng-repeat="r in resources | pagination: (currentPage - 1) * pageSize | limitTo: pageSize">
+        <div ng-click="openResource(r)" class="panel panel-danger col-md-5" ng-repeat="r in resources | orderBy: '-Date' | pagination: (currentPage - 1) * pageSize | limitTo: pageSize">
             <h3>{{ r.ResourceName }}</h3>
             <div>{{ r.Description }}</div>
             <p class="category">{{r.Category}}</p>
