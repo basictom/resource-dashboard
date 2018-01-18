@@ -17,7 +17,7 @@ namespace resource_dashboard.Controllers
         //GET resources
         [HttpGet]
         [Route("api/resources")]
-        public IEnumerable<Resources> GetReources()
+        public IEnumerable<Resources> GetResources()
         {
             return db.Resources.ToList<Resources>();
         }
@@ -28,10 +28,25 @@ namespace resource_dashboard.Controllers
         {
             var query = tags.Split(',');
 
-            var resources = from r in db.Resources
+            var resources = db.Resources.Where(r => r.Tags.Any(t => query.Contains(t.TagName)));
+
+            /*var resources = from r in db.Resources
                             join t in db.Tags on r.id equals t.Resources.id
                             where query.Contains(t.TagName)
                             select r;
+            */
+
+            //var resources = new IQueryable<Resources>;
+
+            /*var resources = db.Resources;
+
+            foreach (var q in query)
+            {
+                resources = from r in resources
+                            join t in db.Tags on r.id equals t.Resources.id
+                            where t.TagName == q
+                            select r;
+            }*/
 
             return resources;
             
@@ -44,8 +59,6 @@ namespace resource_dashboard.Controllers
 
             var resource = db.Tags.Where(q => q.TagName.Contains(query)).Select(r => r.TagName).Distinct();
 
-            //.Select(r => r.TagName).Distinct();
-            //db.Tags.Where(q => q.TagName.Contains(query));
             return resource;
         }
         [HttpGet]
@@ -95,10 +108,5 @@ namespace resource_dashboard.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
-        //PUT resources
-        //public putResource Put(string name, string description, string category, int category_id)
-        //{
-
-        //}
     }
 }
