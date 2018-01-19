@@ -17,7 +17,7 @@ namespace resource_dashboard.Controllers
         //GET resources
         [HttpGet]
         [Route("api/resources")]
-        public IEnumerable<Resources> GetResources()
+        public IEnumerable<Resources> GetReources()
         {
             return db.Resources.ToList<Resources>();
         }
@@ -29,24 +29,6 @@ namespace resource_dashboard.Controllers
             var query = tags.Split(',');
 
             var resources = db.Resources.Where(r => r.Tags.Any(t => query.Contains(t.TagName)));
-
-            /*var resources = from r in db.Resources
-                            join t in db.Tags on r.id equals t.Resources.id
-                            where query.Contains(t.TagName)
-                            select r;
-            */
-
-            //var resources = new IQueryable<Resources>;
-
-            /*var resources = db.Resources;
-
-            foreach (var q in query)
-            {
-                resources = from r in resources
-                            join t in db.Tags on r.id equals t.Resources.id
-                            where t.TagName == q
-                            select r;
-            }*/
 
             return resources;
             

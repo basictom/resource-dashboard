@@ -37,7 +37,6 @@
     }
 
     $scope.category = (cat) => {
-        console.log(cat);
         $http.get(baseUrl + "/api/resources/category?category=" + cat).then((results) => {
             $scope.resources = results.data;
         }).catch(error => console.log(error));
@@ -59,7 +58,6 @@
                 $scope.resource = resource;
                 $scope.searchTags = ($query) => {
                     return $http.get(baseUrl + '/api/resources/tags?query=' + $query).then((result) => {
-                        console.log(result);
                         return result.data;
                     });
                 };

@@ -3,7 +3,7 @@
         <div ng-click="category('Javascript')"><img width="50" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/240px-Unofficial_JavaScript_logo_2.svg.png" /></div>
         <div ng-click="category('PHP')"><img width="75" src="http://www.xappsoftware.com/wordpress/wp-content/uploads/2014/02/PHP.png" /></div>
         <div ng-click="category('SQL')"><img width="75" src="https://www.handybackup.net/images/icons/mysql-backup.png" /></div>
-        <div ng-click="category('C#')"><img width="50" src="https://developer.fedoraproject.org/static/logo/csharp.png" /></div>
+        <div ng-click="category('C%23')"><img width="50" src="https://developer.fedoraproject.org/static/logo/csharp.png" /></div>
         <div ng-click="category('HTML')"><img width="75" src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" /></div>
         <div ng-click="category('CSS')"><img width="50" src="https://cdn.worldvectorlogo.com/logos/css-3.svg" /></div>
         <div ng-click="category('.NET')"><img width="75" src="https://codercamps.co/Img/dotNet-logo.png" /></div>
@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="card-pagination">
-        <ul uib-pagination total-items="resources.length" items-per-page="pageSize" ng-model="currentPage"></ul>
+        <ul uib-pagination max-size="5" total-items="resources.length" items-per-page="pageSize" ng-model="currentPage"></ul>
     </div>
 </div>
 

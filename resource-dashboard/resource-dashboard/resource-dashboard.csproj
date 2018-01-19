@@ -293,6 +293,30 @@
     <Compile Include="Migrations\201801111627106_trying-date.Designer.cs">
       <DependentUpon>201801111627106_trying-date.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801182313231_rerunningDB.cs" />
+    <Compile Include="Migrations\201801182313231_rerunningDB.Designer.cs">
+      <DependentUpon>201801182313231_rerunningDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801182318388_fixing-db.cs" />
+    <Compile Include="Migrations\201801182318388_fixing-db.Designer.cs">
+      <DependentUpon>201801182318388_fixing-db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801191531439_what-the-hell.cs" />
+    <Compile Include="Migrations\201801191531439_what-the-hell.Designer.cs">
+      <DependentUpon>201801191531439_what-the-hell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801191545415_tryingtofixxxx.cs" />
+    <Compile Include="Migrations\201801191545415_tryingtofixxxx.Designer.cs">
+      <DependentUpon>201801191545415_tryingtofixxxx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801191552477_thissucks.cs" />
+    <Compile Include="Migrations\201801191552477_thissucks.Designer.cs">
+      <DependentUpon>201801191552477_thissucks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801191553260_fortheloveofgodjustwork.cs" />
+    <Compile Include="Migrations\201801191553260_fortheloveofgodjustwork.Designer.cs">
+      <DependentUpon>201801191553260_fortheloveofgodjustwork.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -1202,6 +1226,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801111627106_trying-date.resx">
       <DependentUpon>201801111627106_trying-date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801182313231_rerunningDB.resx">
+      <DependentUpon>201801182313231_rerunningDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801182318388_fixing-db.resx">
+      <DependentUpon>201801182318388_fixing-db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801191531439_what-the-hell.resx">
+      <DependentUpon>201801191531439_what-the-hell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801191545415_tryingtofixxxx.resx">
+      <DependentUpon>201801191545415_tryingtofixxxx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801191552477_thissucks.resx">
+      <DependentUpon>201801191552477_thissucks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801191553260_fortheloveofgodjustwork.resx">
+      <DependentUpon>201801191553260_fortheloveofgodjustwork.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
