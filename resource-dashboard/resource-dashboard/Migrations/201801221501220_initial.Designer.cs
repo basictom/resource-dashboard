@@ -7,13 +7,13 @@ namespace resource_dashboard.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class tryingdate : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(tryingdate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201801111627106_trying-date"; }
+            get { return "201801221501220_initial"; }
         }
         
         string IMigrationMetadata.Source

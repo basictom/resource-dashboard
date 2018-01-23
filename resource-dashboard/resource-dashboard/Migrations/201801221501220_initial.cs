@@ -8,6 +8,44 @@ namespace resource_dashboard.Migrations
         public override void Up()
         {
             CreateTable(
+                "dbo.Categories",
+                c => new
+                    {
+                        id = c.Int(nullable: false, identity: true),
+                        TagId = c.Int(nullable: false),
+                        CategoryName = c.String(),
+                    })
+                .PrimaryKey(t => t.id);
+            
+            CreateTable(
+                "dbo.Resources",
+                c => new
+                    {
+                        id = c.Int(nullable: false, identity: true),
+                        Category = c.String(),
+                        ResourceName = c.String(),
+                        Description = c.String(),
+                        ResourceUrl = c.String(),
+                        Date = c.DateTime(nullable: false),
+                        Categories_id = c.Int(),
+                    })
+                .PrimaryKey(t => t.id)
+                .ForeignKey("dbo.Categories", t => t.Categories_id)
+                .Index(t => t.Categories_id);
+            
+            CreateTable(
+                "dbo.Tags",
+                c => new
+                    {
+                        id = c.Int(nullable: false, identity: true),
+                        TagName = c.String(),
+                        Resources_id = c.Int(),
+                    })
+                .PrimaryKey(t => t.id)
+                .ForeignKey("dbo.Resources", t => t.Resources_id)
+                .Index(t => t.Resources_id);
+            
+            CreateTable(
                 "dbo.AspNetRoles",
                 c => new
                     {
@@ -83,17 +121,24 @@ namespace resource_dashboard.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.Resources", "Categories_id", "dbo.Categories");
+            DropForeignKey("dbo.Tags", "Resources_id", "dbo.Resources");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.Tags", new[] { "Resources_id" });
+            DropIndex("dbo.Resources", new[] { "Categories_id" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Tags");
+            DropTable("dbo.Resources");
+            DropTable("dbo.Categories");
         }
     }
 }

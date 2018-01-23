@@ -29,6 +29,7 @@ namespace resource_dashboard
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/ng-tags-input.css",
+                      "~/Content/font-awesome.min.css",
                       "~/Content/site.css"));
         }
     }

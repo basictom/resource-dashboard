@@ -152,7 +152,14 @@ tags-input .host {
     height:35px;
     padding: 0px 30px;
 }
-
+.delete-cont {
+    width:100%;
+    text-align:center;
+}
+.delete-cont button {
+    margin-top:50px;
+    padding: 0px 40px;
+}
 /* 
    =================
     CSS GRID STYLES

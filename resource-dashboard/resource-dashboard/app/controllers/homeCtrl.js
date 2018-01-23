@@ -6,7 +6,13 @@
     var globalResource = $scope.resources;
     $scope.search = [];
 
+    $scope.delete = true;
+
     getResources();
+
+
+    
+
 
     async function getResources() {
         await $http.get(baseUrl + "/api/resources").then((results) => {
@@ -17,7 +23,6 @@
 
     $scope.openResource = (obj) => {
         $scope.obj = obj;
-
         $uibModal.open({
             templateUrl: 'show-resource-modal.html',
             resolve: {
@@ -32,6 +37,17 @@
                         resource: this.obj
                     });
                 };
+                $scope.delete = (del) => {
+                    console.log(del);
+                };
+                document.addEventListener("keydown", function (e) {
+                    if (e.ctrlKey && e.altKey && e.code === "KeyD") {
+                        console.log("clicking ctrl + alt + D");
+                        $scope.deleteBtn = () => {
+                            console.log("wefiok;hwefoihefw");
+                        }
+                    }
+                });
             }
         });
     }

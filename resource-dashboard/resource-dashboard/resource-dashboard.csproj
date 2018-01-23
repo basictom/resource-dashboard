@@ -237,85 +237,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712021634024_initial.cs" />
-    <Compile Include="Migrations\201712021634024_initial.Designer.cs">
-      <DependentUpon>201712021634024_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712021654565_adding db.cs" />
-    <Compile Include="Migrations\201712021654565_adding db.Designer.cs">
-      <DependentUpon>201712021654565_adding db.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712021702135_updateDB.cs" />
-    <Compile Include="Migrations\201712021702135_updateDB.Designer.cs">
-      <DependentUpon>201712021702135_updateDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712021806024_fixedDB.cs" />
-    <Compile Include="Migrations\201712021806024_fixedDB.Designer.cs">
-      <DependentUpon>201712021806024_fixedDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712060029392_629_db_fix.cs" />
-    <Compile Include="Migrations\201712060029392_629_db_fix.Designer.cs">
-      <DependentUpon>201712060029392_629_db_fix.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712091729006_fix-resource-id.cs" />
-    <Compile Include="Migrations\201712091729006_fix-resource-id.Designer.cs">
-      <DependentUpon>201712091729006_fix-resource-id.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712091732499_resource-id-issues.cs" />
-    <Compile Include="Migrations\201712091732499_resource-id-issues.Designer.cs">
-      <DependentUpon>201712091732499_resource-id-issues.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712132045266_attempt-dos.cs" />
-    <Compile Include="Migrations\201712132045266_attempt-dos.Designer.cs">
-      <DependentUpon>201712132045266_attempt-dos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712192253247_tablefix.cs" />
-    <Compile Include="Migrations\201712192253247_tablefix.Designer.cs">
-      <DependentUpon>201712192253247_tablefix.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712200024463_corrected-resource-id.cs" />
-    <Compile Include="Migrations\201712200024463_corrected-resource-id.Designer.cs">
-      <DependentUpon>201712200024463_corrected-resource-id.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712200302091_alteredtagtable.cs" />
-    <Compile Include="Migrations\201712200302091_alteredtagtable.Designer.cs">
-      <DependentUpon>201712200302091_alteredtagtable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712200305039_alteredresourcelabelintagtable.cs" />
-    <Compile Include="Migrations\201712200305039_alteredresourcelabelintagtable.Designer.cs">
-      <DependentUpon>201712200305039_alteredresourcelabelintagtable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801111600152_set-date.cs" />
-    <Compile Include="Migrations\201801111600152_set-date.Designer.cs">
-      <DependentUpon>201801111600152_set-date.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801111627106_trying-date.cs" />
-    <Compile Include="Migrations\201801111627106_trying-date.Designer.cs">
-      <DependentUpon>201801111627106_trying-date.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801182313231_rerunningDB.cs" />
-    <Compile Include="Migrations\201801182313231_rerunningDB.Designer.cs">
-      <DependentUpon>201801182313231_rerunningDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801182318388_fixing-db.cs" />
-    <Compile Include="Migrations\201801182318388_fixing-db.Designer.cs">
-      <DependentUpon>201801182318388_fixing-db.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801191531439_what-the-hell.cs" />
-    <Compile Include="Migrations\201801191531439_what-the-hell.Designer.cs">
-      <DependentUpon>201801191531439_what-the-hell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801191545415_tryingtofixxxx.cs" />
-    <Compile Include="Migrations\201801191545415_tryingtofixxxx.Designer.cs">
-      <DependentUpon>201801191545415_tryingtofixxxx.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801191552477_thissucks.cs" />
-    <Compile Include="Migrations\201801191552477_thissucks.Designer.cs">
-      <DependentUpon>201801191552477_thissucks.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801191553260_fortheloveofgodjustwork.cs" />
-    <Compile Include="Migrations\201801191553260_fortheloveofgodjustwork.Designer.cs">
-      <DependentUpon>201801191553260_fortheloveofgodjustwork.cs</DependentUpon>
+    <Compile Include="Migrations\201801221501220_initial.cs" />
+    <Compile Include="Migrations\201801221501220_initial.Designer.cs">
+      <DependentUpon>201801221501220_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -335,10 +259,13 @@
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\ng-tags-input.bootstrap.css" />
     <Content Include="Content\ng-tags-input.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\angular-animate.js" />
@@ -409,6 +336,11 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -1185,65 +1117,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712021634024_initial.resx">
-      <DependentUpon>201712021634024_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712021654565_adding db.resx">
-      <DependentUpon>201712021654565_adding db.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712021702135_updateDB.resx">
-      <DependentUpon>201712021702135_updateDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712021806024_fixedDB.resx">
-      <DependentUpon>201712021806024_fixedDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712060029392_629_db_fix.resx">
-      <DependentUpon>201712060029392_629_db_fix.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712091729006_fix-resource-id.resx">
-      <DependentUpon>201712091729006_fix-resource-id.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712091732499_resource-id-issues.resx">
-      <DependentUpon>201712091732499_resource-id-issues.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712132045266_attempt-dos.resx">
-      <DependentUpon>201712132045266_attempt-dos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712192253247_tablefix.resx">
-      <DependentUpon>201712192253247_tablefix.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712200024463_corrected-resource-id.resx">
-      <DependentUpon>201712200024463_corrected-resource-id.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712200302091_alteredtagtable.resx">
-      <DependentUpon>201712200302091_alteredtagtable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712200305039_alteredresourcelabelintagtable.resx">
-      <DependentUpon>201712200305039_alteredresourcelabelintagtable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801111600152_set-date.resx">
-      <DependentUpon>201801111600152_set-date.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801111627106_trying-date.resx">
-      <DependentUpon>201801111627106_trying-date.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801182313231_rerunningDB.resx">
-      <DependentUpon>201801182313231_rerunningDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801182318388_fixing-db.resx">
-      <DependentUpon>201801182318388_fixing-db.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801191531439_what-the-hell.resx">
-      <DependentUpon>201801191531439_what-the-hell.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801191545415_tryingtofixxxx.resx">
-      <DependentUpon>201801191545415_tryingtofixxxx.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801191552477_thissucks.resx">
-      <DependentUpon>201801191552477_thissucks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801191553260_fortheloveofgodjustwork.resx">
-      <DependentUpon>201801191553260_fortheloveofgodjustwork.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801221501220_initial.resx">
+      <DependentUpon>201801221501220_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

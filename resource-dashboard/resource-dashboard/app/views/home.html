@@ -73,6 +73,9 @@
             <p>{{obj.Description}}</p>
             <p class="category">{{obj.Category}}</p>
             <span class="pill-tags" ng-repeat="t in obj.Tags">{{t.TagName}}</span>
+            <div class="delete-cont">
+                <button ng-hide="deleteBtn()" class="modal-btn red-btn" ng-click="delete(obj.id)">DELETE</button>
+            </div>
         </div>
     </div>
 </script>
